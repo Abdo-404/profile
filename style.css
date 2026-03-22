@@ -1,0 +1,177 @@
+body {
+  margin:0;
+  font-family:sans-serif;
+  background:linear-gradient(to right, skyblue, lightgreen);
+  color:black;
+  scroll-behavior:smooth;
+  font-weight: bold;
+}
+
+/* NAV */
+nav {
+  position:sticky;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:0px 30px;
+  background: linear-gradient(to right, skyblue, white);;
+  z-index:1000;
+  align-items:center;
+}
+
+nav ul {
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+nav a:hover {
+    color: blue;
+}
+
+a {
+  color: black;
+  text-decoration:none;
+}
+
+.front{
+  width: 90%;
+  max-width: 250px;
+  border-radius: 100px;
+  margin: 0 auto;
+}
+
+/* MOBILE */
+.menu-toggle {
+  display:none;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to right, skyblue, white);
+    padding: 10px;
+    text-align: center;    
+  }
+  nav ul.show {
+    display:flex;
+  }
+  .menu-toggle {
+    display:block;
+  }
+  .img {
+    width: 150px;
+  }
+}
+
+/* SECTIONS */
+.sec {
+  padding:80px 40px;
+  text-align:center;
+}
+
+.item {
+  padding:20px;
+  border-radius:12px;
+  transition:.3s;
+  margin-bottom: 10px;
+}
+
+.card {
+  padding:20px;
+  border-radius:12px;
+  transition:.3s;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Section */
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-left: 4px solid RoyalBlue;
+  padding-left: 10px;
+}
+
+/* Header card */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightseagreen;
+}
+
+/* Nested section */
+.sub-header {
+  cursor: pointer;
+  border-left: 4px solid RoyalBlue;
+}
+
+/* Small animation */
+details[open] > summary .header{
+  border-left: 3px solid blueviolet;
+  padding-left: 10px;
+}
+
+/* ANIMATION */
+.fade {
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.img {
+  margin: 10px;
+  float: right;
+  border-radius:12px;
+}
+
+.contact-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-icons a {
+  color: white;
+  font-size: 30px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.contact-icons a:hover {
+  background: Navy;
+  transform: translateY(-3px);
+}
