@@ -15,18 +15,15 @@ function toggleMenu(){
 }
 
 
-function includeHTML() {
-  const elements = document.querySelectorAll("[data-include]");
+function loadPage() {
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page") || "home";
 
-  elements.forEach(el => {
-    const file = el.getAttribute("data-include");
-
-    fetch(file)
-      .then(res => res.text())
-      .then(data => {
-        el.innerHTML = data;
-      });
-  });
+  fetch(`pages/${page}.html`)
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("content").innerHTML = data;
+    });
 }
 
-document.addEventListener("DOMContentLoaded", includeHTML);
+window.addEventListener("DOMContentLoaded", loadPage);
