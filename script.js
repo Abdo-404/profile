@@ -18,7 +18,9 @@ function toggleMenu(){
 function loadPage() {
   const params = new URLSearchParams(window.location.search);
   const page = params.get("page");
-
+  if (!page) { 
+      return;
+      }
   fetch(page)
     .then(res => res.text())
     .then(data => {
