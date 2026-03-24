@@ -19,7 +19,7 @@ function loadPage() {
   const params = new URLSearchParams(window.location.search);
   const page = params.get("page") || "home";
 
-  fetch(`pages/${page}.html`)
+  fetch(page)
     .then(res => res.text())
     .then(data => {
       document.getElementById("content").innerHTML = data;
