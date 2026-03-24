@@ -17,12 +17,22 @@ function toggleMenu(){
 
 function loadPage() {
   const params = new URLSearchParams(window.location.search);
-  const page = params.get("page") || "home";
+  const page = params.get("page") || "test.html"; // default page
 
   fetch(page)
-    .then(res => res.text())
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Page not found");
+      }
+      return res.text();
+    })
     .then(data => {
       document.getElementById("content").innerHTML = data;
+    })
+    .catch(err => {
+      document.getElementById("content").innerHTML =
+        "<h2>Page not found</h2>";
+      console.error(err);
     });
 }
 
